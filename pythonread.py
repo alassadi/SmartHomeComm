@@ -25,8 +25,11 @@ class Watcher(object):
         stamp = os.stat(self.filename).st_mtime
         if stamp != self._cached_stamp:
             self._cached_stamp = stamp
+
+            filepath = r'./test.txt'
+
             # File has changed, so do something...
-            f = open(r'C:\\Users\\Robin\\Desktop\\tester12\\test.txt', 'r')
+            f = open(filepath, 'r')
             line = f.readline()
             inputFromBase = line
             print(inputFromBase)
@@ -116,7 +119,8 @@ class Watcher(object):
 def custom_action(text):
     print(text)
 
-watch_file = 'C:\\Users\\Robin\\Desktop\\tester12\\test.txt'
+#watch_file = 'C:\\Users\\Robin\\Desktop\\tester12\\test.txt'
+watch_file = r'./test.txt'
 
 # watcher = Watcher(watch_file)  # simple
 watcher = Watcher(watch_file, custom_action, text='File changed')  # also call custom action function

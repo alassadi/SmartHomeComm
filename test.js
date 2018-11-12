@@ -1,6 +1,7 @@
 var firebase = require("firebase");
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var xhr = new XMLHttpRequest();
+const fs = require('fs');
 
 // Initialize Firebase
 var config = {
@@ -20,6 +21,7 @@ var database = firebase.database();
 var deviceRef = database.ref("Devices");
 deviceRef.on("child_changed", function (snapshot) {
   console.log(snapshot.key +" "+ snapshot.child('enabled').val());
+  parse(snapshot.key, snapshot.child('enabled').val());
 });
 
 // send http request
@@ -28,4 +30,21 @@ xhr.open("GET", url);
 xhr.send();
 xhr.onreadystatechange = (e) => {
   console.log(xhr.responseText)
+};
+
+function parse(key, value) {
+  if(key == "my9iXu6WvEgx5oNLLegs"){ // the light inside
+    if (value==false){
+      value = 8;
+    }else if (value==true){
+      value=7;
+    }
+    fs.writeFile("test.txt", value, function(err) {
+      if(err) {
+          return console.log(err);
+      }
+  
+      console.log("The file was saved!");
+  }); 
+  }
 };
