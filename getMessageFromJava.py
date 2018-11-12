@@ -18,7 +18,11 @@ while True:
 	c.send(len(message_to_send).to_bytes(2, byteorder='big'))
 	c.send(message_to_send)
 	c.shutdown(1)
-	c.close()
+	c.close() 
+	 
+
+
+  
 
 
 
