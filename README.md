@@ -1,4 +1,4 @@
-Protocol - two-way-communication between pi and arduino
+# Protocol
 
 Serial 'input' are sent from pi to arduino, and 'output' are sent from arduino to pi
 
@@ -59,7 +59,22 @@ Output string "Not known command"
 
 
 Example of python script run from a Raspberry Pi 3:
+```actionscript
 import serial
 ser = serial.Serial('/dev/ttyACM0', 9600)
 ser.write('3') #Turns on fire alarm
 print(ser.readLine()) #Prints out respons from arduino
+```
+# Firebase Connection
+Firebase connection is being handled by test.js.
+It uses firebase js library and node.js.
+**Installing Firebase**
+Firebase library has to be installed via npm in order to run the script, otherwise it will throw an error.
+To install firebase open CLI, cd your way to directory of test.js and run:
+```
+npm install firebase
+```
+This might throw an error if grpc is missing. To fix it run:
+```
+npm install grpc --build-from-source
+```
