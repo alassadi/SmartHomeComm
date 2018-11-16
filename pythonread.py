@@ -108,7 +108,7 @@ class Watcher(object):
                  #arduino.write(b'<1>')
                 #response_From_Arduino = arduino.readline()
                 #print(response_From_Arduino) 
-                print('15 was sent to Arduino') 
+                print('16 was sent to Arduino') 
                 
                 #19 checks the temp
             if inputFromBase == '19':
