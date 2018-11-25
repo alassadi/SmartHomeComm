@@ -39,12 +39,63 @@ function parse(key, value) {
     }else if (value==true){
       value=7;
     }
-    fs.writeFile("test.txt", value, function(err) {
-      if(err) {
-          return console.log(err);
-      }
-  
-      console.log("The file was saved!");
-  }); 
+  } else if (key == "burglar alarm"){
+    if (value==false){
+      value = 2;
+    }else if (value==true){
+      value=1;
+    }
+  }else if (key == "fire alarm"){
+    if (value==false){
+      value = 4;
+    }else if (value==true){
+      value = 3;
+    }
+  }else if (key == " lamp outside"){
+    if (value==false){
+      value = 6;
+    }else if (value==true){
+      value=5;
+    }
+  }else if (key == "door is open"){
+    value = 9; 
+  }else if (key == "Check temperature outside"){
+    value = 10;
+  }else if (key == "radiator"){
+    if (value==false){
+      value = 12;
+    }else if (value==true){
+      value=11;
+    }
+  }else if (key == "Check if burglar alarm is on"){
+    value = 13
+  }else if (key == "Check if fire alarm is on"){
+    value = 14
+  }else if (key == "Check if outside lamp is on"){
+    value = 15
+  }else if (key == "Check if indoor lamp is on"){
+    value = 16
+  }else if (key == "Check temperature inside (upstairs)"){
+    value = 17
+  }else if (key == "Check temperature inside (downstairs)"){
+    value = 18
+  }else if (key == "Check state of house (Fire)"){
+    value = 19
+  }else if (key == "Check state of house (Water Leak)"){
+    value = 20
+  }else if (key == "Check state of house (Stove)"){
+    value = 21
+  }else if (key == "Check state of house (Window)"){
+    value = 22
   }
+  write(value);
 };
+
+function write(value){
+  fs.writeFile("test.txt", value, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("The file was saved!");
+}); 
+}
