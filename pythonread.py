@@ -10,13 +10,12 @@ arduino = serial.Serial(port, 9600)
 
 class Watcher(object):
     running = True
-    refresh_delay_secs = 1
+    refresh_milliSecond = 0.002
 
     # Constructor
-    def __init__(self, watch_file, call_func_on_change=None, *args, **kwargs):
+    def __init__(self, watch_file, *args, **kwargs):
         self._cached_stamp = 0
         self.filename = watch_file
-        self.call_func_on_change = call_func_on_change
         self.args = args
         self.kwargs = kwargs
 
@@ -44,7 +43,7 @@ class Watcher(object):
         while self.running:
             try:
                 # Look for changes
-                time.sleep(self.refresh_delay_secs)
+                time.sleep(refresh_milliSecond)
                 self.look()
             except KeyboardInterrupt:
                 print('\nDone')
@@ -55,9 +54,6 @@ class Watcher(object):
             except:
                 print('Unhandled error: %s' % sys.exc_info()[0])
 
-# Call this function each time a change happens
-def custom_action(text):
-    print(text)
 
 watch_file = r'./test.txt'
 
