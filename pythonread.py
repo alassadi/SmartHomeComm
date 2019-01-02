@@ -43,7 +43,7 @@ class Watcher(object):
         while self.running:
             try:
                 # Look for changes
-                time.sleep(refresh_milliSecond)
+                time.sleep(self.refresh_milliSecond)
                 self.look()
             except KeyboardInterrupt:
                 print('\nDone')
@@ -58,5 +58,5 @@ class Watcher(object):
 watch_file = r'./test.txt'
 
 # watcher = Watcher(watch_file)  # simple
-watcher = Watcher(watch_file, custom_action, text='File changed')  # also call custom action function
+watcher = Watcher(watch_file)  # also call custom action function
 watcher.watch()  # start the watch going
