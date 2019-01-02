@@ -32,8 +32,7 @@ class Watcher(object):
             line = f.readline()
             print(line+" sent.")
             arduino.write(str.encode(line))
-            if self.call_func_on_change is not None:
-                self.call_func_on_change(*self.args, **self.kwargs)
+            
 
 
 
