@@ -39,35 +39,35 @@ function parse(key, value) {
     }else if (value==true){
       value=7;
     }
-  } else if (key == "burglar alarm"){
+  } else if (key == "ICYkFxoI0x2ng9NzGark"){ // burglar alarm
     if (value==false){
       value = 2;
     }else if (value==true){
       value=1;
     }
-  }else if (key == "fire alarm"){
+  }else if (key == "NjF7valDGmHOPZrF0S9O"){ // fire alarm
     if (value==false){
       value = 4;
     }else if (value==true){
       value = 3;
     }
-  }else if (key == " lamp outside"){
+  }else if (key == "HrWTumcyQgNbcai78KAv"){ // lamp outside
     if (value==false){
       value = 6;
     }else if (value==true){
       value=5;
     }
-  }else if (key == "door is open"){
+  }else if (key == "eGtv1yzXNHPiOeCqdY81"){ //door
     value = 9; 
-  }else if (key == "Check temperature outside"){
+  }else if (key == "ORr9T5abPtJpeV6XdPw8"){ // temp outside
     value = 10;
-  }else if (key == "radiator"){
+  }else if (key == "y3BVqxWaMZOmmcEPunb6"){ //radiator
     if (value==false){
       value = 12;
     }else if (value==true){
       value=11;
     }
-  }else if (key == "Check if burglar alarm is on"){
+  }else if (key == "Check if burglar alarm is on"){ // burglar alarm
     value = 13
   }else if (key == "Check if fire alarm is on"){
     value = 14
@@ -79,7 +79,7 @@ function parse(key, value) {
     value = 17
   }else if (key == "Check temperature inside (downstairs)"){
     value = 18
-  }else if (key == "Check state of house (Fire)"){
+  }else if (key == "Check state of house (Fire)"){  
     value = 19
   }else if (key == "Check state of house (Water Leak)"){
     value = 20
