@@ -45,12 +45,20 @@ function parse(key, value) {
     }else if (value==true){
       value=1;
     }
-  }else if (key == "NjF7valDGmHOPZrF0S9O"){ // fire alarm
-    if (value==false){
-      value = 4;
-    }else if (value==true){
-      value = 3;
+  //}else if (key == "NjF7valDGmHOPZrF0S9O"){ // fire alarm
+    //if (value==false){
+      //value = 4;
+    //}else if (value==true){
+      //value = 3;
+    //}
+    
+    else if(key == "NjF7valDGmHOPZrF0S9O"){ // turn off the firealarm
+        if(value==true){
+            value = 4;
+        }
     }
+
+
   }else if (key == "HrWTumcyQgNbcai78KAv"){ // lamp outside
     if (value==false){
       value = 6;
