@@ -2,6 +2,7 @@ import os
 import sys 
 import time
 import serial
+from firebase import firebase
 
 port = '/dev/ttyACM0'
 arduino = serial.Serial(port, 9600)
@@ -48,11 +49,11 @@ class Watcher(object):
             print('Failed to get data from Arduino.')
             time.sleep(10)
 
-            data = {"Outside temperature": dataRead}
-            firebase.post('/sensor/outside', data) #Post to some table in Firebase
+        data = {"Outside temperature": dataRead}
+        firebase.post('/sensor/outside', data) #Post to some table in Firebase
             
-            update_firebase_outSideTemp()
-            time.sleep(5)        
+        update_firebase_outSideTemp()
+        time.sleep(5)        
 
 
 
