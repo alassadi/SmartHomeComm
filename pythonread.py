@@ -6,6 +6,8 @@ import serial
 port = '/dev/ttyACM0'
 arduino = serial.Serial(port, 9600)
 
+firebase = firebase.FirebaseApplication('https://smarthome-3c6b9.firebaseio.com/', None) #Initiate Firebase
+
 #print(arduino.readline())
 
 class Watcher(object):
@@ -32,7 +34,25 @@ class Watcher(object):
             line = f.readline()
             print(line+" sent.")
             arduino.write(str.encode(line))
+
+
+    #Method to read from Arduino and post a temperature value to Firebase
+    def update_firebase_outSideTemp():
+        dataRead = arduino.readline()
+        if data is not None:
+            time.sleep(1)
+            pieces = data.split("sensor= ")
+            temperature = pieces
+            print temperature
+        else:
+            print('Failed to get data from Arduino.')
+            time.sleep(10)
+
+            data = {"Outside temperature": dataRead}
+            firebase.post('/sensor/outside', data) #Post to some table in Firebase
             
+            update_firebase_outSideTemp()
+            time.sleep(5)        
 
 
 
