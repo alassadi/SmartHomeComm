@@ -32,7 +32,7 @@ class Watcher(object):
             line = f.readline()
             print(line+" sent.")
             arduino.write(str.encode(line))
-            #Mofification of Jimmy's method, write all responses we get from arduino to firebase. Firebase then sends it to clients via FCM.
+            #Modification of Jimmy's method, write all responses we get from arduino to firebase. Firebase then sends it to clients via FCM.
             #dataRead = arduino.readline()
             from firebase import firebase
             firebase = firebase.FirebaseApplication('linktosmarthouse', None) 
