@@ -91,7 +91,7 @@ function parse(key, value) {
     value = 19
   }else if (key == "PbjTCF949vOXLB9idof0"){ //waterleak
     value = 20
-  }else if (key == "Check state of house (Stove)"){
+  }else if (key == "wHDkKc81N73z3JxKKiYJ"){
     value = 21
   }else if (key == "jUMNhUrIo4EqYX7RGcp5"){ //check window
     value = 22
