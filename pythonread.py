@@ -9,7 +9,7 @@ arduino = serial.Serial(port, 9600)
 
 
 
-#print(arduino.readline())
+print(arduino.readline())
 
 class Watcher(object):
     running = True
