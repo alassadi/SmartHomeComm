@@ -83,17 +83,17 @@ function parse(key, value) {
     value = 15
   }else if (key == "Check if indoor lamp is on"){
     value = 16
-  }else if (key == "Check temperature inside (upstairs)"){
+  }else if (key == "CO7kWmm0MLkOqzKcWsfE"){ //temp upstairs
     value = 17
   }else if (key == "Check temperature inside (downstairs)"){
     value = 18
   }else if (key == "Check state of house (Fire)"){  
     value = 19
-  }else if (key == "Check state of house (Water Leak)"){
+  }else if (key == "PbjTCF949vOXLB9idof0"){ //waterleak
     value = 20
   }else if (key == "Check state of house (Stove)"){
     value = 21
-  }else if (key == "Check state of house (Window)"){
+  }else if (key == "jUMNhUrIo4EqYX7RGcp5"){ //check window
     value = 22
   }
   write(value);
