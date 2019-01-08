@@ -2,12 +2,12 @@ import os
 import sys 
 import time
 import serial
-from firebase import firebase
+
 
 port = '/dev/ttyACM0'
 arduino = serial.Serial(port, 9600)
 
-firebase = firebase.FirebaseApplication('https://smarthome-3c6b9.firebaseio.com/', None) #Initiate Firebase
+
 
 #print(arduino.readline())
 
@@ -21,9 +21,7 @@ class Watcher(object):
         self.filename = watch_file
         self.args = args
         self.kwargs = kwargs
-        #thread = threading.Thread(target=self.checkFire, args=()) Background thread that is running occassionally to look if house is on fire.
-        #thread.daemon = True
-        #thread.start()
+       
 
     # Look for changes
     def look(self):
@@ -49,18 +47,6 @@ class Watcher(object):
    
      
 
-    #Method to detect a fire, then write it to some table in Firebase. This will only work good if its possible to write/read from arduino through another port other than 9600
-    ''' Not used
-    def update_onFire():
-        while True:
-         #arduino.write(str.encode(19))  Write 19 to look if its burning in house or not, this should possible be writing through a different port than the other 9600 to avoid collisions with port 9600.                                                
-         #dataRead = arduino.readline() Read the response from arduino which will be "Burning or not burning"
-         if dataRead is 'FIRE!!':
-          from firebase import firebase
-          firebase = firebase.FirebaseApplication('linktosmarthousedatabase', None)
-          result = firebase.patch('/whatevernameofcategory',{'Fire':dataRead})
-          time.sleep(1000)
-          '''
       
 
       
