@@ -85,7 +85,7 @@ function parse(key, value) {
     value = 16
   }else if (key == "CO7kWmm0MLkOqzKcWsfE"){ //temp upstairs
     value = 17
-  }else if (key == "Check temperature inside (downstairs)"){
+  }else if (key == "Dga7pWKFbWR0NquaWc9V"){
     value = 18
   }else if (key == "Check state of house (Fire)"){  
     value = 19
