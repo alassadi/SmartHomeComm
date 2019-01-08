@@ -39,7 +39,7 @@ function parse(key, value) {
     }else if (value=="true"){
       value=7;
     }
-  } else if (key == "ICYkFxoI0x2ng9NzGark"){ // burglar alarm
+  } else if (key == "ICYkFxoI0x2ng9NzGark"){     // burglar alarm
     if (value=="false"){
       value = 2;
     }else if (value=="true"){
@@ -53,7 +53,7 @@ function parse(key, value) {
     //}
     
     else if(key == "NjF7valDGmHOPZrF0S9O"){ // turn off the firealarm
-        if(value=="true"){
+        if(value=="false"){
             value = 4;
         }
     }
@@ -91,7 +91,7 @@ function parse(key, value) {
     value = 19
   }else if (key == "PbjTCF949vOXLB9idof0"){ //waterleak
     value = 20
-  }else if (key == "wHDkKc81N73z3JxKKiYJ"){
+  }else if (key == "wHDkKc81N73z3JxKKiYJ"){ //stove
     value = 21
   }else if (key == "jUMNhUrIo4EqYX7RGcp5"){ //check window
     value = 22
