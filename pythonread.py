@@ -50,6 +50,7 @@ class Watcher(object):
      
 
     #Method to detect a fire, then write it to some table in Firebase. This will only work good if its possible to write/read from arduino through another port other than 9600
+    ''' Not used
     def update_onFire():
         while True:
          #arduino.write(str.encode(19))  Write 19 to look if its burning in house or not, this should possible be writing through a different port than the other 9600 to avoid collisions with port 9600.                                                
@@ -59,6 +60,7 @@ class Watcher(object):
           firebase = firebase.FirebaseApplication('linktosmarthousedatabase', None)
           result = firebase.patch('/whatevernameofcategory',{'Fire':dataRead})
           time.sleep(1000)
+          '''
       
 
       
